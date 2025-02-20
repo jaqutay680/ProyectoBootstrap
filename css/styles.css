@@ -1,0 +1,135 @@
+/* ----- General ----- */
+body {
+    background-image: url('../img/fondo-index.jpg');
+    /* Fondo de toda la página */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #FFD700;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo personalizado para la barra de navegación */
+.custom-navbar {
+    background-image: url('img/cupra-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: background-color 0.3s ease;
+    padding: 10px 0;
+}
+
+.custom-navbar .navbar-brand img {
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.custom-navbar .navbar-brand img:hover {
+    transform: scale(1.1); /* Efecto de escala cuando pasa el ratón */
+}
+
+/* Estilo de los enlaces de navegación */
+.custom-navbar .navbar-nav .nav-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+/* Efecto de hover en los enlaces */
+.custom-navbar .navbar-nav .nav-link:hover {
+    color: #FFD700;
+    text-decoration: underline;
+}
+
+/* Enlace activo */
+.custom-navbar .navbar-nav .nav-link.active {
+    color: #FFD700 !important;
+}
+
+/* Cambio de fondo al hacer scroll */
+.custom-navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el icono del menú en pantallas pequeñas */
+.custom-navbar .navbar-toggler-icon {
+    background-color: #FFD700;
+}
+
+
+/* ----- Contenedor Principal ----- */
+.container {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fondo semi-transparente */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1,
+h2,
+h3 {
+    color: #FFD700;
+}
+
+/* ----- Carrusel ----- */
+.carousel img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(255, 215, 0, 0.8);
+    border-radius: 50%;
+}
+
+/* ----- Pie de página ----- */
+footer {
+    background-color: #000;
+    color: #FFD700;
+}
+
+/* Personaliza la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 12px;
+    /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+    background: #333;
+    /* Color de fondo del track */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FFD700;
+    /* Color del thumb (la parte que se mueve) */
+    border-radius: 10px;
+    border: 2px solid #333;
+    /* Bordes del thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #FFA500;
+    /* Color del thumb al pasar el ratón por encima */
+}
+
+/* Hacer el scroll más suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Iniciar con elementos invisibles */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+/* Cuando el elemento esté visible, será opaco */
+.fade-in.visible {
+    opacity: 1;
+}
