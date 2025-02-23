@@ -1,15 +1,20 @@
 /* ----- General ----- */
-body {
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
     background-image: url('../img/fondo-index.jpg');
-    /* Fondo de toda la página */
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     color: #FFD700;
     font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
-/* Estilo personalizado para la barra de navegación */
+/* ----- Barra de navegación ----- */
 .custom-navbar {
     background-image: url('img/cupra-banner.jpg');
     background-size: cover;
@@ -24,10 +29,9 @@ body {
 }
 
 .custom-navbar .navbar-brand img:hover {
-    transform: scale(1.1); /* Efecto de escala cuando pasa el ratón */
+    transform: scale(1.1);
 }
 
-/* Estilo de los enlaces de navegación */
 .custom-navbar .navbar-nav .nav-link {
     font-size: 1.1rem;
     font-weight: 600;
@@ -37,41 +41,37 @@ body {
     transition: color 0.3s ease;
 }
 
-/* Efecto de hover en los enlaces */
 .custom-navbar .navbar-nav .nav-link:hover {
     color: #FFD700;
     text-decoration: underline;
 }
 
-/* Enlace activo */
 .custom-navbar .navbar-nav .nav-link.active {
     color: #FFD700 !important;
 }
 
-/* Cambio de fondo al hacer scroll */
 .custom-navbar.scrolled {
     background-color: rgba(0, 0, 0, 0.7);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo para el icono del menú en pantallas pequeñas */
 .custom-navbar .navbar-toggler-icon {
     background-color: #FFD700;
 }
 
-
 /* ----- Contenedor Principal ----- */
 .container {
+    flex: 1;
     background-color: rgba(0, 0, 0, 0.8);
-    /* Fondo semi-transparente */
     padding: 20px;
     border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     color: #FFD700;
+    margin-top: 0;
 }
 
 /* ----- Carrusel ----- */
@@ -91,45 +91,199 @@ h3 {
 footer {
     background-color: #000;
     color: #FFD700;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
 }
 
-/* Personaliza la barra de desplazamiento */
+/* ----- Reproductores de audio ----- */
+.audio-player {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #000;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.audio-player audio {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.audio-player audio::-webkit-media-controls-panel {
+    background-color: #000;
+    border-radius: 10px;
+}
+
+.audio-player audio::-webkit-media-controls-play-button,
+.audio-player audio::-webkit-media-controls-mute-button {
+    background-color: #FFD700;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+.audio-player audio::-webkit-media-controls-play-button:hover,
+.audio-player audio::-webkit-media-controls-mute-button:hover {
+    background-color: #FFA500;
+}
+
+.audio-player audio::-webkit-media-controls-timeline {
+    background-color: #333;
+    border-radius: 5px;
+    height: 4px;
+}
+
+.audio-player audio::-webkit-media-controls-current-time-display,
+.audio-player audio::-webkit-media-controls-time-remaining-display {
+    color: #FFD700;
+    font-size: 0.9rem;
+}
+
+.audio-player audio::-webkit-media-controls-volume-slider {
+    background-color: #333;
+    border-radius: 5px;
+    height: 4px;
+}
+
+.audio-player audio::-webkit-media-controls-mute-button {
+    background-color: #FFD700;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.audio-player audio::-webkit-media-controls-mute-button:hover {
+    background-color: #FFA500;
+}
+
+.audio-player p {
+    color: #FFD700;
+    font-size: 1rem;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* ----- Video de bienvenida ----- */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+/* ----- Iconos de redes sociales ----- */
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links .btn-social-icon {
+    background-color: #FFD700;
+    color: #000;
+    border-radius: 50%;
+    margin: 5px;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links .btn-social-icon:hover {
+    background-color: #000;
+    color: #FFD700;
+}
+
+.social-links .btn-social-icon i {
+    font-size: 20px;
+}
+
+/* ----- Scroll personalizado ----- */
 ::-webkit-scrollbar {
-    width: 12px;
-    /* Ancho de la barra de desplazamiento */
+    width: 20px;
 }
 
 ::-webkit-scrollbar-track {
     background: #333;
-    /* Color de fondo del track */
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
     background: #FFD700;
-    /* Color del thumb (la parte que se mueve) */
     border-radius: 10px;
     border: 2px solid #333;
-    /* Bordes del thumb */
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: #FFA500;
-    /* Color del thumb al pasar el ratón por encima */
 }
 
-/* Hacer el scroll más suave */
-html {
-    scroll-behavior: smooth;
+/* ----- Media Queries para Responsividad ----- */
+@media (max-width: 768px) {
+    .custom-navbar .navbar-nav .nav-link {
+        font-size: 1rem;
+        margin-left: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .carousel img {
+        border-radius: 5px;
+    }
 }
 
-/* Iniciar con elementos invisibles */
-.fade-in {
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-}
+@media (max-width: 576px) {
+    .custom-navbar .navbar-brand img {
+        height: 30px;
+    }
 
-/* Cuando el elemento esté visible, será opaco */
-.fade-in.visible {
-    opacity: 1;
+    .custom-navbar .navbar-nav .nav-link {
+        font-size: 0.9rem;
+        margin-left: 5px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
 }
